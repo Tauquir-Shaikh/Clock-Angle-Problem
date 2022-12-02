@@ -1,19 +1,19 @@
 def calculate_angle(h, m):
-#If the entered value is in negative its Invalid
+#If the entered value is in negative it's Invalid
     if (h < 0 or m < 0):
         return ('Invalid input')
 
-    if (h > 12):
+    if (h > 12):                # Changing the value in 12 hour format
         h -= 12
     if (m > 60):
         m -= 60
 
-    hour_angle = 0.5 * (h * 60 + m)
-    minute_angle = 6 * m
+    hour_angle = 0.5 * (h * 60 + m)       # Calculating the Hour angle
+    minute_angle = 6 * m                  # Calculating the minute angle
 
-    angle = abs(hour_angle - minute_angle)
+    angle = abs(hour_angle - minute_angle)   # Storing the Angle betweeen them without sign
 
-    angle = min(360 - angle, angle)
+    angle = min(360 - angle, angle)      # Changing the Angle betweeen them in the range 0-180 degrees
 
     return angle
 
